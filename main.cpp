@@ -49,7 +49,7 @@ int main(){
 	int star_size = 2;
 	int para_size = box_size - (border_size * 2) - (star_size * 2);
 
-	cout << "Enter Paragraph: " << endl;
+	cout << "Enter Paragraph:" << endl;
 
 	while(getline(cin,s)){
 		cout << endl;
