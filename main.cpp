@@ -28,6 +28,8 @@ vector<string> split(const string& s, const int& para_size){
 				currentpara = currentpara + wordsize + 1;
 				para = para + s.substr(i, j - i) + " ";
 				i = j;
+			} else if (wordsize > para_size){
+				i = j;
 			} else {
 				ret.push_back(para);
 				currentpara = 0;
@@ -42,17 +44,12 @@ vector<string> split(const string& s, const int& para_size){
 	return ret;
 }
 
-int main(){
-	string s;
+int frame(const string& s){
 	int box_size = 30;
 	int border_size = 1;
-	int star_size = 2;
+	int star_size = 1;
 	int para_size = box_size - (border_size * 2) - (star_size * 2);
 
-	cout << "Enter Paragraph: " << endl;
-
-	while(getline(cin,s)){
-		cout << endl;
 		for (int n = 0; n != star_size; ++n){
 			for (int n = 0; n != box_size; ++n){
 				cout << "*";
@@ -118,6 +115,17 @@ int main(){
 			}
 			cout << endl;
 		}
+	return 0;
+}
+
+int main(){
+	string p;
+
+	cout << "Enter Paragraph: " << endl;
+
+	while(getline(cin,p)){
+		cout << endl;
+		frame(p);
 		cout << "Enter Paragraph: ";
 	}
 	return 0;
